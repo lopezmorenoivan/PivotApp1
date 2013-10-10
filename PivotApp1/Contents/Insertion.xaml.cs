@@ -8,11 +8,11 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace PivotApp1.ItemView
+namespace PivotApp1.Contents
 {
-    public partial class Page1 : PhoneApplicationPage
+    public partial class Insertion : PhoneApplicationPage
     {
-        public Page1()
+        public Insertion()
         {
             InitializeComponent();
         }
