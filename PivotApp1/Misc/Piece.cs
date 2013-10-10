@@ -13,7 +13,7 @@ namespace PivotApp1
 {
     public class Piece
     {
-        public int Id { get; set; }
+        public int Id { get; }
         public String Name { get; set; }
         //public Object Picture { get; set; }
         public String Option1 { get; set; }
@@ -22,6 +22,16 @@ namespace PivotApp1
         public async void Insert()
         {
             await App.MobileService.GetTable<Piece>().InsertAsync(this);
+        }
+
+        public async void Update()
+        {
+            await App.MobileService.GetTable<Piece>().UpdateAsync(this);
+        }
+
+        public async void Delete()
+        {
+            await App.MobileService.GetTable<Piece>().DeleteAsync(this);
         }
     }
 }

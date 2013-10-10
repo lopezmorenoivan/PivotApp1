@@ -32,11 +32,13 @@ namespace PivotApp1.Contents
 
         private void NameUpdate(object sender, TextChangedEventArgs e)
         {
-
+            piece.Name = Name.Text;
+            piece.Update();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            piece.Delete();
 
         }
     }

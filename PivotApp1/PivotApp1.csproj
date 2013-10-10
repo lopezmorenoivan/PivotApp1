@@ -95,10 +95,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Contents\Description.xaml.cs">
+    <Compile Include="Views\Description.xaml.cs">
       <DependentUpon>Description.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Contents\Insertion.xaml.cs">
+    <Compile Include="Views\Insertion.xaml.cs">
       <DependentUpon>Insertion.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
@@ -121,11 +121,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Contents\Description.xaml">
+    <Page Include="Views\Description.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Contents\Insertion.xaml">
+    <Page Include="Views\Insertion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
