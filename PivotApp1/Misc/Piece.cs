@@ -13,7 +13,7 @@ namespace PivotApp1
 {
     public class Piece
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public String Name { get; set; }
         //public Object Picture { get; set; }
         public String Option1 { get; set; }
