@@ -7,6 +7,9 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+using Microsoft.Phone;
+using System.Windows.Media.Imaging;
 
 namespace PivotApp1.Contents
 {
@@ -25,9 +28,21 @@ namespace PivotApp1.Contents
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
+            PhotoChooserTask taskToChoosePhoto = new PhotoChooserTask();
+            taskToChoosePhoto.PixelHeight = 400;
+            taskToChoosePhoto.PixelWidth = 400;
+            taskToChoosePhoto.Show();
+            taskToChoosePhoto.Completed += new EventHandler<PhotoResult>(taskToChoosePhoto_Completed);
         }
 
-        
+        void taskToChoosePhoto_Completed(object sender, PhotoResult e)
+        {
+            if (e.TaskResult == TaskResult.OK)
+            {
+                string fileName = e.OriginalFileName;
+                WriteableBitmap selectedPhoto = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
+                Image.Source = selectedPhoto;
+            }
+        }
     }
 }

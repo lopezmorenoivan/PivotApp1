@@ -28,8 +28,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
-            <Button Content="Add Picture" HorizontalAlignment="Left" Margin="326,29,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="28,10,0,0" VerticalAlignment="Top" Width="100" Name="Image" Tap="Image_Tap" />
+            <Image HorizontalAlignment="Left" Height="100" Margin="168,10,0,0" VerticalAlignment="Top" Width="100" Name="Image" Tap="Image_Tap" />
             <TextBox HorizontalAlignment="Left" Height="72" Margin="0,135,0,0" TextWrapping="Wrap" Name="Name" Text="Name" VerticalAlignment="Top" Width="456"/>
             <TextBox HorizontalAlignment="Left" Height="72" Margin="0,229,0,0" TextWrapping="Wrap" Name="Option1" Text="Option 1" VerticalAlignment="Top" Width="456"/>
             <TextBox HorizontalAlignment="Left" Height="72" Margin="0,323,0,0" TextWrapping="Wrap" Name="Option2" Text="Option 2" VerticalAlignment="Top" Width="456"/>
