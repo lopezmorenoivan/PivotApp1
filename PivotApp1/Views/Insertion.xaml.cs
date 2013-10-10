@@ -22,5 +22,12 @@ namespace PivotApp1.Contents
             Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
             piece.Insert();
         }
+
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
+        }
+
+        
     }
 }
