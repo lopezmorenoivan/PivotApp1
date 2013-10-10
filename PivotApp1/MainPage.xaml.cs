@@ -29,10 +29,7 @@ namespace PivotApp1
 
             User user = new User { Mail = "Awesome user2", Pass = "prueba" };
             user.Insert();
-
-            //Piece piece = new Piece { Name = "hello", Picture = GetImage(""), Option1 = "prueba", Option2 = "prueba" };
-            Piece piece = new Piece { Name = "hello", Option1 = "prueba", Option2 = "prueba" };
-            piece.Insert();
+           
         }
 
         public static Object GetImage(string filename)

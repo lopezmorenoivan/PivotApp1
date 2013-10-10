@@ -15,6 +15,13 @@ namespace PivotApp1.Contents
         public Description()
         {
             InitializeComponent();
+
+            //LoadPieces();
+        }
+
+        public void LoadPieces()
+        {
+            //things with the database
         }
     }
 }
