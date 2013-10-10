@@ -53,14 +53,14 @@ namespace PivotApp1
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // navigate
-            this.NavigationService.Navigate(new Uri("/Contents/InsertItem.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
         }
 
 
         private void Clothes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // navigate
-            this.NavigationService.Navigate(new Uri("/Contents/Description.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Views/Description.xaml", UriKind.Relative));
         }
         
 
