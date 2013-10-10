@@ -82,6 +82,8 @@ namespace PivotApp1
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+            RootFrame.UriMapper = Resources["UriMapper"] as UriMapper;
         }
 
         // Code to execute when the application is launching (eg, from Start)
