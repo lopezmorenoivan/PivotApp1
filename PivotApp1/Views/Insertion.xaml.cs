@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using Microsoft.Phone;
 using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 
 namespace PivotApp1.Contents
 {
@@ -18,6 +19,8 @@ namespace PivotApp1.Contents
         public Insertion()
         {
             InitializeComponent();
+
+            InitializeImage();
         }
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -37,6 +40,16 @@ namespace PivotApp1.Contents
                 WriteableBitmap selectedPhoto = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
                 Image.Source = selectedPhoto;
             }
+        }
+
+        public void InitializeImage ()
+        {
+            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("SplashScreenImage.jpg", UriKind.Relative));
+            BitmapImage image = new BitmapImage();
+            image.SetSource(imageResource.Stream);
+            image.DecodePixelHeight = 10;
+            image.DecodePixelWidth = 10;
+            Image.Source = image;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

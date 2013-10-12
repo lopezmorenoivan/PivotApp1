@@ -25,11 +25,7 @@ namespace PivotApp1
             DataContext = App.ViewModel;
 
             // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
-
-            User user = new User { Mail = "Awesome user2", Pass = "prueba" };
-            user.Insert();
-           
+            //BuildLocalizedApplicationBar();  
         }
 
 
