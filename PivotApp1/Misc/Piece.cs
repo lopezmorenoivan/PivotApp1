@@ -15,7 +15,7 @@ namespace PivotApp1
     {
         public int Id { get; set; }
         public String Name { get; set; }
-        //public Object Picture { get; set; }
+        //public Image Picture { get; set; }
         public String Option1 { get; set; }
         public String Option2 { get; set; }
 
