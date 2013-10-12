@@ -8,8 +8,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PivotApp1.Resources;
 using PivotApp1.ViewModels;
-
 using Microsoft.WindowsAzure.MobileServices;
+using PivotApp1.Misc;
+using System.Collections.Generic;
 
 namespace PivotApp1
 {
@@ -90,6 +91,10 @@ namespace PivotApp1
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            Pieces pieces = Pieces.CreateObject();
+
+            pieces.all = new List<Piece>();
+
         }
 
         // Code to execute when the application is activated (brought to foreground)

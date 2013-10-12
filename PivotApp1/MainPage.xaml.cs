@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Resources;
+using PivotApp1.Misc;
 
 namespace PivotApp1
 {
@@ -25,10 +26,17 @@ namespace PivotApp1
             DataContext = App.ViewModel;
 
             // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();  
+            //BuildLocalizedApplicationBar();
+
+            InitializeList();
         }
 
+        private void InitializeList()
+        {
+            Pieces pieces = Pieces.CreateObject();
 
+            Pieces.all = 
+        }
 
         public static Object GetImage(string filename)
         {
@@ -48,7 +56,7 @@ namespace PivotApp1
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void AddButton_Click_1(object sender, RoutedEventArgs e)
         {
             // navigate
             this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
