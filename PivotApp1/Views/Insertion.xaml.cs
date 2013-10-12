@@ -20,12 +20,6 @@ namespace PivotApp1.Contents
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
-            piece.Insert();
-        }
-
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             PhotoChooserTask taskToChoosePhoto = new PhotoChooserTask();
@@ -43,6 +37,13 @@ namespace PivotApp1.Contents
                 WriteableBitmap selectedPhoto = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
                 Image.Source = selectedPhoto;
             }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
+            piece.Insert();
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }
