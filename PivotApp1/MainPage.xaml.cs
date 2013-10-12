@@ -32,6 +32,8 @@ namespace PivotApp1
            
         }
 
+
+
         public static Object GetImage(string filename)
         {
             string imgLocation = Application.Current.Resources["ImagesLocation"].ToString();

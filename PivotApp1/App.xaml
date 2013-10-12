@@ -13,6 +13,7 @@
             <nav:UriMapper.UriMappings>
                 <nav:UriMapping Uri="/Insertion" MappedUri="/Views/Insertion.xaml"/>
                 <nav:UriMapping Uri="/Description" MappedUri="/Views/Description.xaml"/>
+                <nav:UriMapping Uri="/MainPage" MappedUri="/MainPage.xaml"/>
             </nav:UriMapper.UriMappings>
         </nav:UriMapper>
 
