@@ -16,8 +16,8 @@ namespace PivotApp1
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private Pieces pieces;
-        private IMobileServiceTable<Piece> todoPieces = App.MobileService.GetTable<Piece>();
+        private Pieces piecesList = Pieces.CreateObject();
+        private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
 
         // Constructor
         public MainPage()
@@ -35,8 +35,9 @@ namespace PivotApp1
 
         private async void InitializeList()
         {
-            pieces.all = await todoPieces.ToCollectionAsync();
-            Clothes.ItemsSource = pieces.all;   
+            piecesList.all = await piecesTable.ToCollectionAsync();
+            
+            Clothes.ItemsSource = piecesList.all;   
         }
 
         public static Object GetImage(string filename)
@@ -67,6 +68,7 @@ namespace PivotApp1
         private void Clothes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // navigate
+            piecesList.current = (Piece) Clothes.SelectedItem;
             this.NavigationService.Navigate(new Uri("/Views/Description.xaml", UriKind.Relative));
         }
         

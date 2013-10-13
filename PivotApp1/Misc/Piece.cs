@@ -8,15 +8,22 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Newtonsoft.Json;
 
 namespace PivotApp1
 {
     public class Piece
     {
         public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
         //public Image Picture { get; set; }
+
+        [JsonProperty(PropertyName = "option1")]
         public String Option1 { get; set; }
+
+        [JsonProperty(PropertyName = "option2")]
         public String Option2 { get; set; }
 
         public async void Insert()
