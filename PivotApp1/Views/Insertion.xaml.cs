@@ -58,5 +58,6 @@ namespace PivotApp1.Contents
             piece.Insert();
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
+
     }
 }

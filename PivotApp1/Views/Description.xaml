@@ -32,13 +32,13 @@
             <Image HorizontalAlignment="Left" Height="185" Margin="113,10,0,0" VerticalAlignment="Top" Width="205" Name="Image" Tap="Image_Tap" />
             <TextBox HorizontalAlignment="Left" Height="72" Margin="0,200,0,0" TextWrapping="Wrap" Name="Name" Text="Name" VerticalAlignment="Top" Width="456"/>
             <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="15,280,15,0">
-                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers"/>
+                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers" Tap="Kind_Tap"/>
                 <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt"/>
                 <toolkit:ListPickerItem x:Name="Coat" Content="Coat"/>
                 <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes"/>
             </toolkit:ListPicker>
             <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="15,380,15,0">
-                <toolkit:ListPickerItem x:Name="Cold" Content="Cold"/>
+                <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Tap="Type_Tap"/>
                 <toolkit:ListPickerItem x:Name="Warm" Content="Warm"/>
                 <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy" Margin="-4,0,4,0"/>
             </toolkit:ListPicker>

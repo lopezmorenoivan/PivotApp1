@@ -17,7 +17,7 @@ namespace PivotApp1.Contents
 {
     public partial class Description : PhoneApplicationPage
     {
-        private Pieces piecesList = Pieces.CreateObject();
+        private Pieces piecesList;
 
         public Description()
         {
@@ -30,7 +30,7 @@ namespace PivotApp1.Contents
 
         public void LoadPiece()
         {
-            //Image.Source = piece.Image();
+            piecesList = Pieces.CreateObject();
             Name.Text = piecesList.current.Name;
             Option1.SelectedIndex = piecesList.current.Option1;
             Option2.SelectedIndex = piecesList.current.Option2;
@@ -49,9 +49,6 @@ namespace PivotApp1.Contents
         private void NameUpdate(object sender, TextChangedEventArgs e)
         {
             piecesList.current.Name = Name.Text;
-            //piece.Picture = Image;
-            piecesList.current.Option1 = Option1.SelectedIndex;
-            piecesList.current.Option2 = Option2.SelectedIndex;
             piecesList.current.Update();
         }
 
@@ -79,5 +76,18 @@ namespace PivotApp1.Contents
                 Image.Source = selectedPhoto;
             }
         }
+
+        private void Kind_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            piecesList.current.Option1 = Option1.SelectedIndex;
+            piecesList.current.Update();
+        }
+
+        private void Type_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            piecesList.current.Option2 = Option2.SelectedIndex;
+            piecesList.current.Update();
+        }
+
     }
 }
