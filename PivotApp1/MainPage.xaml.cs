@@ -30,7 +30,7 @@ namespace PivotApp1
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
-            InitializeList();
+            //InitializeList();
         }
 
         private async void InitializeList()

@@ -54,7 +54,7 @@ namespace PivotApp1.Contents
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
+            Piece piece = new Piece { Name = this.Name.Text, Picture = this.Image, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
             piece.Insert();
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }

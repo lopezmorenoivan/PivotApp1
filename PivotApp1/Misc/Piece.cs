@@ -18,8 +18,10 @@ namespace PivotApp1
 
         [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
-        //public Image Picture { get; set; }
-
+        /*
+        [JsonProperty(PropertyName = "picture")]
+        public bi { get; set; }
+        */
         [JsonProperty(PropertyName = "option1")]
         public String Option1 { get; set; }
 
