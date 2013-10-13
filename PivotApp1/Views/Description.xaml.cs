@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Phone;
 using PivotApp1.Misc;
 using System.Windows.Resources;
-
+ 
 namespace PivotApp1.Contents
 {
     public partial class Description : PhoneApplicationPage
