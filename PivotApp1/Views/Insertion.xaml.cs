@@ -11,7 +11,6 @@ using Microsoft.Phone.Tasks;
 using Microsoft.Phone;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
-using Microsoft.Phone.Controls;
 
 namespace PivotApp1.Contents
 {
@@ -55,7 +54,7 @@ namespace PivotApp1.Contents
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Piece piece = new Piece { Name = this.Name.Text, Picture = this.Image, Option1 = this.Option1.Text, Option2 = this.Option2.Text };
+            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.SelectedIndex, Option2 = this.Option2.SelectedIndex };
             piece.Insert();
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }

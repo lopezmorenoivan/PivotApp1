@@ -29,20 +29,20 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
-            <Image HorizontalAlignment="Left" Height="100" Margin="168,10,0,0" VerticalAlignment="Top" Width="100" Name="Image" Tap="Image_Tap" />
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="0,10,0,0" TextWrapping="Wrap" Name="Name" Text="Name" VerticalAlignment="Top" Width="456"/>
-            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="10,90,0,0">
+            <Image HorizontalAlignment="Left" Height="185" Margin="113,10,0,0" VerticalAlignment="Top" Width="205" Name="Image" Tap="Image_Tap" />
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="0,200,0,0" TextWrapping="Wrap" Name="Name" Text="Name" VerticalAlignment="Top" Width="456"/>
+            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="15,280,15,0">
                 <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers"/>
-                <toolkit:ListPickerItem x:Name="T-Shirt" Content="T-Shirt"/>
+                <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt"/>
                 <toolkit:ListPickerItem x:Name="Coat" Content="Coat"/>
                 <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes"/>
             </toolkit:ListPicker>
-            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="14,190,0,0">
+            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="15,380,15,0">
                 <toolkit:ListPickerItem x:Name="Cold" Content="Cold"/>
                 <toolkit:ListPickerItem x:Name="Warm" Content="Warm"/>
                 <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"/>
             </toolkit:ListPicker>
-            <Button Content="Add" HorizontalAlignment="Left" Margin="175,452,0,0" VerticalAlignment="Top" Name="AddButton" Click="AddButton_Click"/>
+            <Button Content="Add" HorizontalAlignment="Left" Margin="175,494,0,0" VerticalAlignment="Top" Name="AddButton" Click="AddButton_Click"/>
         </Grid>
     </Grid>
 

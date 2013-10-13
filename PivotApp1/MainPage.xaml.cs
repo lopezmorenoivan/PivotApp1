@@ -29,8 +29,6 @@ namespace PivotApp1
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
-
-            //InitializeList();
         }
 
         private async void InitializeList()
@@ -70,6 +68,11 @@ namespace PivotApp1
             // navigate
             piecesList.current = (Piece) Clothes.SelectedItem;
             this.NavigationService.Navigate(new Uri("/Views/Description.xaml", UriKind.Relative));
+        }
+
+        private void Cloathes_Loaded(object sender, RoutedEventArgs e)
+        {
+            InitializeList();
         }
         
 

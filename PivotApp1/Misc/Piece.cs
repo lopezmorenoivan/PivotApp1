@@ -23,10 +23,10 @@ namespace PivotApp1
         public bi { get; set; }
         */
         [JsonProperty(PropertyName = "option1")]
-        public String Option1 { get; set; }
+        public int Option1 { get; set; }
 
         [JsonProperty(PropertyName = "option2")]
-        public String Option2 { get; set; }
+        public int Option2 { get; set; }
 
         public async void Insert()
         {
@@ -42,5 +42,6 @@ namespace PivotApp1
         {
             await App.MobileService.GetTable<Piece>().DeleteAsync(this);
         }
+
     }
 }

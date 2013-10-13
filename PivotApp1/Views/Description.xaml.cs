@@ -11,6 +11,7 @@ using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone;
 using PivotApp1.Misc;
+using System.Windows.Resources;
 
 namespace PivotApp1.Contents
 {
@@ -22,6 +23,8 @@ namespace PivotApp1.Contents
         {
             InitializeComponent();
 
+            InitializeImage();
+
             LoadPiece();
         }
 
@@ -29,20 +32,30 @@ namespace PivotApp1.Contents
         {
             //Image.Source = piece.Image();
             Name.Text = piecesList.current.Name;
-            Option1.Text = piecesList.current.Option1;
-            Option2.Text = piecesList.current.Option2;
+            Option1.SelectedIndex = piecesList.current.Option1;
+            Option2.SelectedIndex = piecesList.current.Option2;
+        }
+
+        public void InitializeImage()
+        {
+            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("SplashScreenImage.jpg", UriKind.Relative));
+            BitmapImage image = new BitmapImage();
+            image.SetSource(imageResource.Stream);
+            image.DecodePixelHeight = 10;
+            image.DecodePixelWidth = 10;
+            Image.Source = image;
         }
 
         private void NameUpdate(object sender, TextChangedEventArgs e)
         {
             piecesList.current.Name = Name.Text;
             //piece.Picture = Image;
-            piecesList.current.Option1 = Option1.Text;
-            piecesList.current.Option2 = Option2.Text;
+            piecesList.current.Option1 = Option1.SelectedIndex;
+            piecesList.current.Option2 = Option2.SelectedIndex;
             piecesList.current.Update();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             piecesList.current.Delete();
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
