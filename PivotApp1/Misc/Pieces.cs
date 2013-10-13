@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace PivotApp1.Misc
 {
     public sealed class Pieces
     {
-        public List<Piece> all { get; set; }
+        public MobileServiceCollection<Piece, Piece> all { get; set; }
         public Piece current { get; set; }
 
         private static Pieces pieces;

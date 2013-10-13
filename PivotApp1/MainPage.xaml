@@ -48,7 +48,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Image}" Width="100" Stretch="Uniform" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{Binding Filename}" TextWrapping="Wrap" />
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

@@ -92,9 +92,6 @@ namespace PivotApp1
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             Pieces pieces = Pieces.CreateObject();
-
-            pieces.all = new List<Piece>();
-
         }
 
         // Code to execute when the application is activated (brought to foreground)

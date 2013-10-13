@@ -16,6 +16,8 @@ namespace PivotApp1
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private Pieces pieces;
+        private IMobileServiceTable<Piece> todoPieces = App.MobileService.GetTable<Piece>();
 
         // Constructor
         public MainPage()
@@ -31,11 +33,10 @@ namespace PivotApp1
             InitializeList();
         }
 
-        private void InitializeList()
+        private async void InitializeList()
         {
-            Pieces pieces = Pieces.CreateObject();
-
-            Pieces.all = 
+            pieces.all = await todoPieces.ToCollectionAsync();
+            Clothes.ItemsSource = pieces.all;   
         }
 
         public static Object GetImage(string filename)
