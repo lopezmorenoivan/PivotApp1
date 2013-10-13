@@ -11,6 +11,7 @@ using Microsoft.Phone.Tasks;
 using Microsoft.Phone;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
+using Microsoft.Phone.Controls;
 
 namespace PivotApp1.Contents
 {

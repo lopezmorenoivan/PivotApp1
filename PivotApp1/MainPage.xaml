@@ -79,8 +79,8 @@
 
             <!--Pivot item three-->
             <phone:PivotItem Header="What to Buy">
-                <!--Double line list no text wrapping-->
-
+                                          
+            
             </phone:PivotItem>
 
             <!--Pivot item four-->
