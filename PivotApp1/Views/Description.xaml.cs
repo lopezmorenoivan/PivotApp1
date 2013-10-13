@@ -10,40 +10,41 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone;
+using PivotApp1.Misc;
 
 namespace PivotApp1.Contents
 {
     public partial class Description : PhoneApplicationPage
     {
-        Piece piece = new Piece();
+        private Pieces piecesList = Pieces.CreateObject();
 
         public Description()
         {
             InitializeComponent();
 
-            //LoadPiece();
+            LoadPiece();
         }
 
         public void LoadPiece()
         {
             //Image.Source = piece.Image();
-            Name.Text = piece.Name;
-            Option1.Text = piece.Option1;
-            Option2.Text = piece.Option2;
+            Name.Text = piecesList.current.Name;
+            Option1.Text = piecesList.current.Option1;
+            Option2.Text = piecesList.current.Option2;
         }
 
         private void NameUpdate(object sender, TextChangedEventArgs e)
         {
-            piece.Name = Name.Text;
+            piecesList.current.Name = Name.Text;
             //piece.Picture = Image;
-            piece.Option1 = Option1.Text;
-            piece.Option2 = Option2.Text;
-            piece.Update();
+            piecesList.current.Option1 = Option1.Text;
+            piecesList.current.Option2 = Option2.Text;
+            piecesList.current.Update();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            piece.Delete();
+            piecesList.current.Delete();
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
