@@ -91,7 +91,7 @@ namespace PivotApp1.Contents
 
         private void Clothes_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadPiece();
+
         }
 
     }

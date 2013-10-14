@@ -6,95 +6,35 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True"
-    >
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="youRcloset" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Login" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
 
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
-        <!--Pivot Control-->
-        <phone:Pivot Title="What To Whear ;)" Margin="10,0,-10,0">
-
-            <!--Pivot item one-->
-            <phone:PivotItem Header="Closet" Margin="0,10,10,168">
-                <StackPanel Margin="0,0,0,-167">
-                    <ListBox x:Name="Clothes" Width="450" Height="448" Margin="10" SelectionChanged="Clothes_SelectionChanged" Loaded="Cloathes_Loaded" Tap="Clothes_Selection" >
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                    <StackPanel Height="100" Margin="0,10,10,168">
-                        <Button Content="Add" Margin="150,0,158,0" RenderTransformOrigin="0.115,-1.039" Name="Add" Click="AddButton_Click_1"/>
-                    </StackPanel>
-                    <StackPanel Height="100"/>
-                </StackPanel>
-
-
-                <!--Double line list no text wrapping-->
-
-
-            </phone:PivotItem>
-
-            <!--Pivot item two-->
-            <phone:PivotItem Header="What to Wear" Margin="0,0,24,28">
-
-                <!--Double line list with text wrapping-->
-
-            </phone:PivotItem>
-
-
-
-            <!--Pivot item three-->
-            <phone:PivotItem Header="What to Buy">
-                                          
-            
-            </phone:PivotItem>
-
-            <!--Pivot item four-->
-            <phone:PivotItem Header="Settings">
-                <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
-                    <Button Content="Disconnect" Name="Disconnect"/>
-
-                </StackPanel>
-            </phone:PivotItem>
-        </phone:Pivot>
-
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />-->
+        <!--ContentPanel - place additional content here-->
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="10,0,-10,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="456"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="10,127,-10,0" VerticalAlignment="Top" Width="456"/>
+            <Button Content="Sign In" HorizontalAlignment="Left" Margin="160,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn"/>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="160,343,0,0" VerticalAlignment="Top" Name="SignUp" Click="SignUpButton_Click"/>
+            <Button Content="Sign Up using Facebook" HorizontalAlignment="Left" Margin="74,445,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click"/>
+        </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>
