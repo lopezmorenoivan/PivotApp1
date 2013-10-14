@@ -75,6 +75,11 @@ namespace PivotApp1
             InitializeList();
         }
 
+        private void Clothes_Selection(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            piecesList.current = (Piece)Clothes.SelectedItem;
+        }
+
 
         
 

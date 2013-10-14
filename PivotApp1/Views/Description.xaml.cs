@@ -17,7 +17,7 @@ namespace PivotApp1.Contents
 {
     public partial class Description : PhoneApplicationPage
     {
-        private Pieces piecesList;
+        private Pieces piecesList = Pieces.CreateObject();
 
         public Description()
         {
@@ -87,6 +87,11 @@ namespace PivotApp1.Contents
         {
             piecesList.current.Option2 = Option2.SelectedIndex;
             piecesList.current.Update();
+        }
+
+        private void Clothes_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadPiece();
         }
 
     }
