@@ -91,7 +91,7 @@ namespace PivotApp1
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            Pieces pieces = Pieces.CreateObject();
+            
         }
 
         // Code to execute when the application is activated (brought to foreground)

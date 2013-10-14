@@ -95,6 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login\FacebookClass.cs" />
+    <Compile Include="Login\KeyValuePairUtils.cs" />
+    <Compile Include="Login\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\ResponseData.cs" />
+    <Compile Include="Login\SignUp.xaml.cs">
+      <DependentUpon>SignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\SignUpFacebook.xaml.cs">
+      <DependentUpon>SignUpFacebook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\UriToolKits.cs" />
     <Compile Include="Misc\Pieces.cs" />
     <Compile Include="Views\Description.xaml.cs">
       <DependentUpon>Description.xaml</DependentUpon>
@@ -122,6 +135,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Login\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\SignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\SignUpFacebook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Description.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

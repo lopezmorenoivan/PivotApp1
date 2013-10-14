@@ -65,12 +65,7 @@
 
             <!--Pivot item two-->
             <phone:PivotItem Header="What to Wear" Margin="0,0,24,28">
-                <Grid HorizontalAlignment="Left" Height="615" VerticalAlignment="Top" Width="456">
-                    <Image
-                    Source="SplashScreenImage.jpg"
-                    Stretch="UniformToFill"/>
 
-                </Grid>
                 <!--Double line list with text wrapping-->
 
             </phone:PivotItem>
@@ -86,6 +81,7 @@
             <!--Pivot item four-->
             <phone:PivotItem Header="Settings">
                 <!--Double line list no text wrapping-->
+                
 
             </phone:PivotItem>
         </phone:Pivot>
