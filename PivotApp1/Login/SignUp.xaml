@@ -31,8 +31,8 @@
             <TextBox HorizontalAlignment="Left" Height="72" Margin="10,10,-10,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="456"/>
             <TextBox HorizontalAlignment="Left" Height="72" Margin="10,212,-10,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="456"/>
             <PasswordBox HorizontalAlignment="Left" Margin="10,312,-10,0" VerticalAlignment="Top" Width="456"/>
-            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="157,504,0,0" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Left" Height="72" Margin="10,109,-10,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="456"/>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="168,525,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
         </Grid>
     </Grid>

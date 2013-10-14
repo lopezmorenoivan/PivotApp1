@@ -17,5 +17,10 @@ namespace PivotApp1.Login
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            User user = new User { 
+        }
+
     }
 }
