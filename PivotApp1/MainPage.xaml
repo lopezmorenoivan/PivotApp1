@@ -82,7 +82,7 @@
             <!--Pivot item four-->
             <phone:PivotItem Header="Settings">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
-                    <Button Content="Disconnect" Name="Disconnect" Click="DisconnectButton_Click"/>
+                    <Button Content="Disconnect" Name="Disconnect"/>
 
                 </StackPanel>
             </phone:PivotItem>

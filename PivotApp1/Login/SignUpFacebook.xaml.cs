@@ -8,7 +8,6 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FacebookUtils;
-using UriToolKits;
 using Tools;
 
 namespace PivotApp1.Login

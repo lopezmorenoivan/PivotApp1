@@ -16,5 +16,15 @@ namespace PivotApp1.Login
         {
             InitializeComponent();
         }
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Login/SignUp.xaml", UriKind.Relative));
+        }
+
+        private void SignUpFacebook_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Login/SignUpFacebook.xaml", UriKind.Relative));
+        }
     }
 }
