@@ -55,6 +55,7 @@
                     <StackPanel Height="100" Margin="0,10,10,168">
                         <Button Content="Add" Margin="150,0,158,0" RenderTransformOrigin="0.115,-1.039" Name="Add" Click="AddButton_Click_1"/>
                     </StackPanel>
+                    <StackPanel Height="100"/>
                 </StackPanel>
 
 
@@ -80,9 +81,10 @@
 
             <!--Pivot item four-->
             <phone:PivotItem Header="Settings">
-                <!--Double line list no text wrapping-->
-                
+                <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
+                    <Button Content="Disconnect" Name="Disconnect" Click="DisconnectButton_Click"/>
 
+                </StackPanel>
             </phone:PivotItem>
         </phone:Pivot>
 

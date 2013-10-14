@@ -74,6 +74,8 @@ namespace PivotApp1
         {
             InitializeList();
         }
+
+
         
 
         // Sample code for building a localized ApplicationBar
