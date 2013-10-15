@@ -29,12 +29,17 @@ namespace PivotApp1.Misc
             return pieces;
         }
 
-        public Piece Selector (int option1, int option2)
+        public Piece Selector (int option1, int option2) 
         {
-            Random random = new Random();
-            int number = random.Next(0, all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Id).Count());
+            if (all.Count() > 0)
+            {
+                Random random = new Random();
+                int number = random.Next(0, all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Name).Count());
 
-            return (Piece)all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Id).Take(number);
+                return (Piece)all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Name).ToArray()[number];
+            }
+            else throw new ArgumentException("No Clothes");
         }
+
     }
 }

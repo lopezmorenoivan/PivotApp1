@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -66,7 +67,7 @@
 
             <!--Pivot item two-->
             <phone:PivotItem Header="What to Wear" Margin="0,0,24,28">
-                <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
+                <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456" Loaded="WTW_Loaded">
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="T-Shirt" VerticalAlignment="Top" Width="456"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TShirtW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Trousers" VerticalAlignment="Top" Width="456"/>
@@ -75,7 +76,7 @@
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="ShoesW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="CoatW"/>
-                    <Button Content="Refresh" Name="Refresh" Margin="150,0,158,0"/>
+                    <Button Content="Refresh" Name="Refresh" Margin="150,0,158,0" Click="Refresh_Click"/>
                 </StackPanel>
             </phone:PivotItem>
 
@@ -99,7 +100,15 @@
             <!--Pivot item four-->
             <phone:PivotItem Header="Settings">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
+                    <toolkit:ListPicker x:Name="Weather" Header="Type">
+                        <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Tap="Type_Selection"/>
+                        <toolkit:ListPickerItem x:Name="Warm" Content="Warm"/>
+                        <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"/>
+                    </toolkit:ListPicker>
                     <Button Content="Disconnect" Name="Disconnect" Click="Disconnect_Click"/>
+                    <StackPanel HorizontalAlignment="Left" Name="About">
+                        <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Width="456"/>
+                    </StackPanel>
                 </StackPanel>
             </phone:PivotItem>
         </phone:Pivot>

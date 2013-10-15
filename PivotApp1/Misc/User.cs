@@ -47,19 +47,19 @@ namespace PivotApp1
         }
 
         public async void Insert()
-        {
+        { 
             await App.MobileService.GetTable<User>().InsertAsync(this);
         }
 
         public async void Check()
         {
             MobileServiceCollection<User, User> users = await App.MobileService.GetTable<User>().
-                Where(User => user.Name == this.Name && user.Pass == this.Pass).ToCollectionAsync();
+                Where(User => user.Mail == this.Mail && user.Pass == this.Pass).ToCollectionAsync();
 
             validated = (users.Count > 0);
         }
 
-        public bool isValid ()
+        public bool isValid()
         {
             return this.validated;
         }

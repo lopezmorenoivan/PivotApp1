@@ -20,6 +20,7 @@ namespace PivotApp1
         private Pieces piecesList = Pieces.CreateObject();
         private User user = User.CreateObject();
         private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
+        private static int weather = 0;
 
         // Constructor
         public Menu()
@@ -35,7 +36,7 @@ namespace PivotApp1
 
         private async void InitializeList()
         {
-            piecesList.all = await piecesTable.Where(Piece => Piece.User == user.Id).
+            piecesList.all = await piecesTable.Where(Piece => Piece.User == user.Mail).
                 ToCollectionAsync();
 
             Clothes.ItemsSource = piecesList.all;
@@ -93,6 +94,43 @@ namespace PivotApp1
             user.Mail = "";
             user.Pass = "";
             user.Surname = "";
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            Load_Selector();
+        }
+
+        private void Load_Selector()
+        {
+            try
+            {
+                Piece piece = piecesList.Selector(0, weather);
+                TrousersW.Text = piece.Name;
+
+                piece = piecesList.Selector(1, weather);
+                TShirtW.Text = piece.Name;
+
+                piece = piecesList.Selector(2, weather);
+                CoatW.Text = piece.Name;
+
+                piece = piecesList.Selector(3, weather);
+                ShoesW.Text = piece.Name;
+            }
+            catch (Exception e)
+            {
+                //Do nothing
+            }
+        }
+
+        private void Type_Selection(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            weather = Weather.SelectedIndex;
+        }
+
+        private void WTW_Loaded(object sender, RoutedEventArgs e)
+        {
+            Load_Selector();
         }
 
 

@@ -29,7 +29,7 @@ namespace PivotApp1
         public int Option2 { get; set; }
 
         [JsonProperty(PropertyName = "user")]
-        public int User { get; set; }
+        public String User { get; set; }
 
         public async void Insert()
         {
