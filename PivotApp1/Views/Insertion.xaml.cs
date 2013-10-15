@@ -16,6 +16,8 @@ namespace PivotApp1.Contents
 {
     public partial class Insertion : PhoneApplicationPage
     {
+        private User user = User.CreateObject();
+
         public Insertion()
         {
             InitializeComponent();
@@ -54,9 +56,9 @@ namespace PivotApp1.Contents
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.SelectedIndex, Option2 = this.Option2.SelectedIndex };
+            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.SelectedIndex, Option2 = this.Option2.SelectedIndex, User = user.Id };
             piece.Insert();
-            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
         }
 
     }

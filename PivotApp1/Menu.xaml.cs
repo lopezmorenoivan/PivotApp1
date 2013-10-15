@@ -17,6 +17,7 @@ namespace PivotApp1
     public partial class Menu : PhoneApplicationPage
     {
         private Pieces piecesList = Pieces.CreateObject();
+        private User user = User.CreateObject();
         private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
 
         // Constructor
@@ -33,7 +34,8 @@ namespace PivotApp1
 
         private async void InitializeList()
         {
-            piecesList.all = await piecesTable.ToCollectionAsync();
+            piecesList.all = await piecesTable.Where(Piece => Piece.User == user.Id).
+                ToCollectionAsync();
 
             Clothes.ItemsSource = piecesList.all;
         }

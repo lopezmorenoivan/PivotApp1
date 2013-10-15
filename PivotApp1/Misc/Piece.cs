@@ -28,6 +28,9 @@ namespace PivotApp1
         [JsonProperty(PropertyName = "option2")]
         public int Option2 { get; set; }
 
+        [JsonProperty(PropertyName = "user")]
+        public int User { get; set; }
+
         public async void Insert()
         {
             await App.MobileService.GetTable<Piece>().InsertAsync(this);

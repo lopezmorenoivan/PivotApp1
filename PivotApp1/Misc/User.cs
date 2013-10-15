@@ -53,7 +53,8 @@ namespace PivotApp1
 
         public async void Check()
         {
-            MobileServiceCollection<User, User> users = await App.MobileService.GetTable<User>().Where(User => user.Name == this.Name).ToCollectionAsync();
+            MobileServiceCollection<User, User> users = await App.MobileService.GetTable<User>().
+                Where(User => user.Name == this.Name && user.Pass == this.Pass).ToCollectionAsync();
 
             validated = (users.Count > 0);
         }

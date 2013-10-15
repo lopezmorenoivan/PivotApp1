@@ -55,7 +55,7 @@ namespace PivotApp1.Contents
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             piecesList.current.Delete();
-            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
         }
 
         private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
