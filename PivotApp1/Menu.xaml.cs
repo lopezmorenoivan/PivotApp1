@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Resources;
 using PivotApp1.Misc;
+using FacebookUtils;
 
 namespace PivotApp1
 {
@@ -82,7 +83,17 @@ namespace PivotApp1
             piecesList.current = (Piece)Clothes.SelectedItem;
         }
 
+        private void Disconnect_Click(object sender, RoutedEventArgs e)
+        {
+            // Disconnect from Facebook
+            FacebookClient.Instance.AccessToken = "";
 
+            User user = User.CreateObject();
+            user.Name = "";
+            user.Mail = "";
+            user.Pass = "";
+            user.Surname = "";
+        }
 
 
         // Sample code for building a localized ApplicationBar
