@@ -38,7 +38,7 @@
          -->
 
         <!--Pivot Control-->
-        <phone:Pivot Title="What To Whear ;)" Margin="10,0,-10,0">
+        <phone:Pivot Title="What To Wear ;)" Margin="10,0,-10,0">
 
             <!--Pivot item one-->
             <phone:PivotItem Header="Closet" Margin="0,10,10,168">
@@ -68,13 +68,13 @@
             <phone:PivotItem Header="What to Wear" Margin="0,0,24,28">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="T-Shirt" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TShirtW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Trousers" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TrousersW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Shoes" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="ShoesW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="CoatW"/>
                     <Button Content="Refresh" Name="Refresh" Margin="150,0,158,0"/>
                 </StackPanel>
             </phone:PivotItem>
@@ -85,13 +85,13 @@
             <phone:PivotItem Header="What to Buy">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="T-Shirt" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TShirtB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Trousers" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TrousersB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Shoes" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="ShoesB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="CoatB"/>
                     <Button Content="Refresh" Name="RefreshB" Margin="150,0,158,0"/>
                 </StackPanel>
             </phone:PivotItem>
@@ -100,7 +100,6 @@
             <phone:PivotItem Header="Settings">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
                     <Button Content="Disconnect" Name="Disconnect" Click="Disconnect_Click"/>
-
                 </StackPanel>
             </phone:PivotItem>
         </phone:Pivot>

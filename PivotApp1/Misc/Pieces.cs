@@ -10,7 +10,9 @@ namespace PivotApp1.Misc
     public sealed class Pieces
     {
         public MobileServiceCollection<Piece, Piece> all { get; set; }
+        public IMobileServiceTable<Piece> pieceTable = App.MobileService.GetTable<Piece>();
         public Piece current { get; set; }
+        public User user = User.CreateObject();
 
         private static Pieces pieces;
         Pieces() {}
@@ -25,6 +27,14 @@ namespace PivotApp1.Misc
 
             // Return the emp object, when user request for create an instance.  
             return pieces;
-        }  
+        }
+
+        public Piece Selector (int option1, int option2)
+        {
+            Random random = new Random();
+            int number = random.Next(0, all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Id).Count());
+
+            return (Piece)all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Id).Take(number);
+        }
     }
 }
