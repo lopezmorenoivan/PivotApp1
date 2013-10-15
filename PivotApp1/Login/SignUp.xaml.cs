@@ -19,7 +19,16 @@ namespace PivotApp1.Login
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User { 
+            User user = User.CreateObject();
+
+            user.Name = Name.Text;
+            user.Surname = Surname.Text;
+            user.Mail = Mail.Text;
+            user.Pass = Password.Password;
+
+            user.Insert();
+
+            this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
         }
 
     }

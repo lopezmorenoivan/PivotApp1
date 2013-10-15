@@ -26,5 +26,19 @@ namespace PivotApp1
         {
             this.NavigationService.Navigate(new Uri("/Login/SignUpFacebook.xaml", UriKind.Relative));
         }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            User user = User.CreateObject();
+            user.Mail = Mail.Text;
+            user.Pass = Pass.Password;
+
+            user.Check();
+
+            if (user.isValid())
+                this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
+            else
+                MessageBox.Show("Mail or Pass are wrong!", "Wrong Login", MessageBoxButton.OK);
+        }
     }
 }

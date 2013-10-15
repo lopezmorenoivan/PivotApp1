@@ -13,8 +13,9 @@ using System.Windows.Navigation;
 namespace PivotApp1
 {
     
-    public class User
+    public sealed class User
     {
+        private bool validated = false;
 
         public int Id { get; set; }
 
@@ -30,9 +31,36 @@ namespace PivotApp1
         [JsonProperty(PropertyName = "pass")]
         public String Pass { get; set; }
 
+        private static User user;
+        User() { }
+
+        public static User CreateObject()
+        {
+            // If the object is null for first time instantiate it once.  
+            if (user == null)
+            {
+                user = new User();
+            }
+
+            // Return the emp object, when user request for create an instance.  
+            return user;
+        }
+
         public async void Insert()
         {
             await App.MobileService.GetTable<User>().InsertAsync(this);
+        }
+
+        public async void Check()
+        {
+            MobileServiceCollection<User, User> users = await App.MobileService.GetTable<User>().Where(User => user.Name == this.Name).ToCollectionAsync();
+
+            validated = (users.Count > 0);
+        }
+
+        public bool isValid ()
+        {
+            return this.validated;
         }
     }
 
