@@ -31,14 +31,14 @@ namespace PivotApp1.Misc
 
         public Piece Selector (int option1, int option2) 
         {
-            if (all.Count() > 0)
+            if (all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Mail).Count() > 0)
             {
                 Random random = new Random();
-                int number = random.Next(0, all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Name).Count());
+                int number = random.Next(0, all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Mail).Count());
 
-                return (Piece)all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Name).ToArray()[number];
+                return (Piece)all.Where(Piece => Piece.Option1 == option1 && Piece.Option2 == option2 && Piece.User == user.Mail).ToArray()[number];
             }
-            else throw new ArgumentException("No Clothes");
+            else return null; //do Nothing
         }
 
     }

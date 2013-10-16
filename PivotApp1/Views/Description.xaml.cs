@@ -89,10 +89,5 @@ namespace PivotApp1.Contents
             piecesList.current.Update();
         }
 
-        private void Clothes_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

@@ -20,7 +20,9 @@ namespace PivotApp1
         private Pieces piecesList = Pieces.CreateObject();
         private User user = User.CreateObject();
         private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
-        private static int weather = 0;
+        private static int weather = 2;
+        private static BitmapImage right = Load_Image("right");
+        private static BitmapImage wrong = Load_Image("wrong");
 
         // Constructor
         public Menu()
@@ -32,6 +34,7 @@ namespace PivotApp1
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+
         }
 
         private async void InitializeList()
@@ -106,20 +109,53 @@ namespace PivotApp1
             try
             {
                 Piece piece = piecesList.Selector(0, weather);
-                TrousersW.Text = piece.Name;
+                if (piece != null)
+                    TrousersW.Text = piece.Name;
+
 
                 piece = piecesList.Selector(1, weather);
-                TShirtW.Text = piece.Name;
 
-                piece = piecesList.Selector(2, weather);
-                CoatW.Text = piece.Name;
+                if (piece != null)
+                    TShirtW.Text = piece.Name;
 
                 piece = piecesList.Selector(3, weather);
-                ShoesW.Text = piece.Name;
+
+                if (piece != null)
+                    ShoesW.Text = piece.Name;
+
+                piece = piecesList.Selector(2, weather);
+
+                if (piece != null)
+                    CoatW.Text = piece.Name;
             }
             catch (Exception e)
             {
-                //Do nothing
+                //do nothing
+            }
+        }
+
+        private BitmapImage Load_Image(string filename)
+        {
+            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("SplashScreenImage.jpg", UriKind.Relative));
+            BitmapImage image = new BitmapImage();
+            image.SetSource(imageResource.Stream);
+            image.DecodePixelHeight = 10;
+            image.DecodePixelWidth = 10;
+            return image;
+        }
+
+        private void Load_Buyer()
+        {
+            try
+            {
+                TrousersB.Source = (piecesList.Buyer(0)) ? right : wrong;
+                TShirtB.Source = (piecesList.Buyer(1)) ? right : wrong;
+                CoatB.Source = (piecesList.Buyer(2)) ? right : wrong;
+                ShoesB.Source = (piecesList.Buyer(3)) ? right : wrong;
+            }
+            catch (Exception e)
+            {
+                //do nothing
             }
         }
 
@@ -131,6 +167,11 @@ namespace PivotApp1
         private void WTW_Loaded(object sender, RoutedEventArgs e)
         {
             Load_Selector();
+        }
+
+        private void RefreshB_Click(object sender, RoutedEventArgs e)
+        {
+            Load_Buyer();
         }
 
 

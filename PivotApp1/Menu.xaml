@@ -86,14 +86,14 @@
             <phone:PivotItem Header="What to Buy">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="T-Shirt" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TShirtB"/>
+                    <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="TShirtB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Trousers" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="TrousersB"/>
+                    <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="TrousersB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Shoes" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="ShoesB"/>
+                    <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="ShoesB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
-                    <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="CoatB"/>
-                    <Button Content="Refresh" Name="RefreshB" Margin="150,0,158,0"/>
+                    <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="CoatB"/>
+                    <Button Content="Refresh" Name="RefreshB" Margin="150,0,158,0" Click="RefreshB_Click"/>
                 </StackPanel>
             </phone:PivotItem>
 
