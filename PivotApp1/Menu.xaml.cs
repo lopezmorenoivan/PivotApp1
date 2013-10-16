@@ -20,7 +20,7 @@ namespace PivotApp1
         private Pieces piecesList = Pieces.CreateObject();
         private User user = User.CreateObject();
         private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
-        private static int weather = 2;
+        private int weather = 0;
         private BitmapImage right;
         private BitmapImage wrong;
 
@@ -62,14 +62,6 @@ namespace PivotApp1
             this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
         }
 
-
-        private void Clothes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // navigate
-            piecesList.current = (Piece)Clothes.SelectedItem;
-            this.NavigationService.Navigate(new Uri("/Views/Description.xaml", UriKind.Relative));
-        }
-
         private void Cloathes_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeList();
@@ -78,6 +70,7 @@ namespace PivotApp1
         private void Clothes_Selection(object sender, System.Windows.Input.GestureEventArgs e)
         {
             piecesList.current = (Piece)Clothes.SelectedItem;
+            this.NavigationService.Navigate(new Uri("/Views/Description.xaml", UriKind.Relative));
         }
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
@@ -101,25 +94,32 @@ namespace PivotApp1
         {
             try
             {
-                Piece piece = piecesList.Selector(0, weather);
+                Piece piece = piecesList.Selector(0, this.weather);
                 if (piece != null)
                     TrousersW.Text = piece.Name;
+                else
+                    TrousersW.Text = "";
 
-
-                piece = piecesList.Selector(1, weather);
+                piece = piecesList.Selector(1, this.weather);
 
                 if (piece != null)
                     TShirtW.Text = piece.Name;
+                else
+                    TShirtW.Text = "";
 
-                piece = piecesList.Selector(3, weather);
+                piece = piecesList.Selector(3, this.weather);
 
                 if (piece != null)
                     ShoesW.Text = piece.Name;
+                else
+                    ShoesW.Text = "";
 
-                piece = piecesList.Selector(2, weather);
+                piece = piecesList.Selector(2, this.weather);
 
                 if (piece != null)
                     CoatW.Text = piece.Name;
+                else
+                    CoatW.Text = "";
             }
             catch (Exception e)
             {
@@ -127,7 +127,7 @@ namespace PivotApp1
             }
         }
 
-        private static BitmapImage Load_Image(string filename)
+        private BitmapImage Load_Image(string filename)
         {
             StreamResourceInfo imageResource = Application.GetResourceStream(new Uri(filename, UriKind.Relative));
             BitmapImage image = new BitmapImage();
@@ -154,7 +154,7 @@ namespace PivotApp1
 
         private void Type_Selection(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            weather = Weather.SelectedIndex;
+            this.weather = Weather.SelectedIndex;
         }
 
         private void WTW_Loaded(object sender, RoutedEventArgs e)

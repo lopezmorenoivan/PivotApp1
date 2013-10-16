@@ -24,8 +24,6 @@ namespace PivotApp1.Contents
             InitializeComponent();
 
             InitializeImage();
-
-            LoadPiece();
         }
 
         public void LoadPiece()
@@ -87,6 +85,11 @@ namespace PivotApp1.Contents
         {
             piecesList.current.Option2 = Option2.SelectedIndex;
             piecesList.current.Update();
+        }
+
+        private void Clothes_Load(object sender, RoutedEventArgs e)
+        {
+            LoadPiece();
         }
 
     }
