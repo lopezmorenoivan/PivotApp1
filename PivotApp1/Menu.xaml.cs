@@ -21,8 +21,8 @@ namespace PivotApp1
         private User user = User.CreateObject();
         private IMobileServiceTable<Piece> piecesTable = App.MobileService.GetTable<Piece>();
         private static int weather = 2;
-        private static BitmapImage right = Load_Image("right");
-        private static BitmapImage wrong = Load_Image("wrong");
+        private BitmapImage right = Load_Image("right.png");
+        private BitmapImage wrong = Load_Image("wrong.png");
 
         // Constructor
         public Menu()
@@ -43,15 +43,6 @@ namespace PivotApp1
                 ToCollectionAsync();
 
             Clothes.ItemsSource = piecesList.all;
-        }
-
-        public static Object GetImage(string filename)
-        {
-            string imgLocation = Application.Current.Resources["ImagesLocation"].ToString();
-            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri(imgLocation + filename, UriKind.Relative));
-            BitmapImage image = new BitmapImage();
-            image.SetSource(imageResource.Stream);
-            return (Object)image;
         }
 
         // Load data for the ViewModel Items
@@ -151,7 +142,7 @@ namespace PivotApp1
                 TrousersB.Source = (piecesList.Buyer(0)) ? right : wrong;
                 TShirtB.Source = (piecesList.Buyer(1)) ? right : wrong;
                 CoatB.Source = (piecesList.Buyer(2)) ? right : wrong;
-                ShoesB.Source = (piecesList.Buyer(3)) ? right : wrong;
+                ShoesB.Source = (piecesList.Buyer(3)) ? right 
             }
             catch (Exception e)
             {

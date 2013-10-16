@@ -41,5 +41,9 @@ namespace PivotApp1.Misc
             else return null; //do Nothing
         }
 
+        public bool Buyer (int option1)
+        {
+            return (all.Where(Piece => Piece.Option1 == option1 && Piece.User == user.Mail).Count() > 3);
+        }
     }
 }
