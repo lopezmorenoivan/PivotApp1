@@ -21,7 +21,7 @@ namespace PivotApp1.Contents
 
         //temp
         private BitmapImage image = new BitmapImage();
-        private String fileName = "";
+        private String fileName = "SplashScreenImage.jpg";
 
         public Insertion()
         {
