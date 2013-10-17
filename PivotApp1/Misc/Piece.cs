@@ -1,13 +1,14 @@
-﻿using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using Microsoft.WindowsAzure.MobileServices;
-using System;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 
 namespace PivotApp1
@@ -18,10 +19,10 @@ namespace PivotApp1
 
         [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
-        /*
+
         [JsonProperty(PropertyName = "picture")]
-        public bi { get; set; }
-        */
+        public String Picture { get; set; }
+
         [JsonProperty(PropertyName = "option1")]
         public int Option1 { get; set; }
 

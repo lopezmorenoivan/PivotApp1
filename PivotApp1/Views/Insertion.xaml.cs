@@ -11,12 +11,17 @@ using Microsoft.Phone.Tasks;
 using Microsoft.Phone;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
+using System.IO;
 
 namespace PivotApp1.Contents
 {
     public partial class Insertion : PhoneApplicationPage
     {
         private User user = User.CreateObject();
+
+        //temp
+        private BitmapImage image = new BitmapImage();
+        private String fileName = "";
 
         public Insertion()
         {
@@ -38,7 +43,7 @@ namespace PivotApp1.Contents
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                string fileName = e.OriginalFileName;
+                fileName = e.OriginalFileName;
                 WriteableBitmap selectedPhoto = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
                 Image.Source = selectedPhoto;
             }
@@ -47,7 +52,6 @@ namespace PivotApp1.Contents
         public void InitializeImage ()
         {
             StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("SplashScreenImage.jpg", UriKind.Relative));
-            BitmapImage image = new BitmapImage();
             image.SetSource(imageResource.Stream);
             image.DecodePixelHeight = 10;
             image.DecodePixelWidth = 10;
@@ -56,9 +60,20 @@ namespace PivotApp1.Contents
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Piece piece = new Piece { Name = this.Name.Text, Option1 = this.Option1.SelectedIndex, Option2 = this.Option2.SelectedIndex, User = user.Mail };
+            Piece piece = new Piece { Name = this.Name.Text, Picture = imageTo64Base(Image),
+                Option1 = this.Option1.SelectedIndex, Option2 = this.Option2.SelectedIndex, User = user.Mail };
             piece.Insert();
             this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
+        }
+
+        private String imageTo64Base (Image image)
+        {
+            Stream imageResource = Application.GetResourceStream(new Uri(fileName, UriKind.Relative)).Stream;
+            MemoryStream memStream = new MemoryStream();
+            imageResource.CopyTo(memStream);
+            // Convert byte[] to Base64 String
+            String base64String = Convert.ToBase64String(memStream.ToArray());
+            return base64String;
         }
 
     }

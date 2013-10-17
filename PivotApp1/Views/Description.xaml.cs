@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Phone;
 using PivotApp1.Misc;
 using System.Windows.Resources;
+using System.IO;
  
 namespace PivotApp1.Contents
 {
@@ -32,6 +33,12 @@ namespace PivotApp1.Contents
             Name.Text = piecesList.current.Name;
             Option1.SelectedIndex = piecesList.current.Option1;
             Option2.SelectedIndex = piecesList.current.Option2;
+            MemoryStream ms = new MemoryStream(Convert.FromBase64String(piecesList.current.Picture));
+            BitmapImage image = new BitmapImage();
+            image.SetSource(ms);
+            image.DecodePixelHeight = 10;
+            image.DecodePixelWidth = 10;
+            Image.Source = image;
         }
 
         public void InitializeImage()

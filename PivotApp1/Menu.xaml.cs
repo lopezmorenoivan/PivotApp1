@@ -62,6 +62,7 @@ namespace PivotApp1
             this.NavigationService.Navigate(new Uri("/Views/Insertion.xaml", UriKind.Relative));
         }
 
+
         private void Cloathes_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeList();

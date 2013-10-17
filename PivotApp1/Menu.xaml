@@ -44,7 +44,7 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="Closet" Margin="0,10,10,168">
                 <StackPanel Margin="0,0,0,-167">
-                    <ListBox x:Name="Clothes" Width="450" Height="448" Margin="10" SelectionChanged="Clothes_SelectionChanged" Loaded="Cloathes_Loaded" Tap="Clothes_Selection" >
+                    <ListBox x:Name="Clothes" Width="450" Height="448" Margin="10" Loaded="Cloathes_Loaded" Tap="Clothes_Selection" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
