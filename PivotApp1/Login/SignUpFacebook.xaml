@@ -31,10 +31,10 @@
             <phone:WebBrowser x:Name="mWebBrowser"
 	            HorizontalAlignment="Left"
 	            VerticalAlignment="Top"
-	            Height="696"
+	            Height="597"
 	            Width="480"
 	            IsScriptEnabled="True"
-	            Navigated="WebBrowser_Navigated"/>
+	            Navigated="WebBrowser_Navigated" Margin="0,0,-24,0"/>
         </Grid>
     </Grid>
 
