@@ -15,7 +15,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FF091A47">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -28,23 +28,24 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
+        <Grid x:Name="ContentPanel" Margin="0,151,24,10" Grid.RowSpan="2">
             <Image HorizontalAlignment="Left" Height="185" Margin="113,10,0,0" VerticalAlignment="Top" Width="205" Name="Image" Tap="Image_Tap" />
             <TextBox HorizontalAlignment="Left" Height="72" Margin="88,200,0,0" TextWrapping="Wrap" Name="Name" Text="" VerticalAlignment="Top" Width="325"/>
-            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="15,280,15,0">
-                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers"/>
-                <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt"/>
-                <toolkit:ListPickerItem x:Name="Coat" Content="Coat"/>
-                <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes"/>
+            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="20,277,306,3">
+                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers" Background="#FF2442C9" Width="130"/>
+                <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Coat" Content="Coat" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes" Background="#FF2442C9"/>
             </toolkit:ListPicker>
-            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="15,380,15,0">
-                <toolkit:ListPickerItem x:Name="Cold" Content="Cold"/>
-                <toolkit:ListPickerItem x:Name="Warm" Content="Warm"/>
-                <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"/>
+            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="308,277,43,103">
+                <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Width="105" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Warm" Content="Warm" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy" Background="#FF2442C9"/>
             </toolkit:ListPicker>
-            <Button Content="Add" HorizontalAlignment="Left" Margin="178,525,0,0" VerticalAlignment="Top" Name="AddButton" Click="AddButton_Click"/>
+            <Button Content="Add" HorizontalAlignment="Left" Margin="187,432,0,0" VerticalAlignment="Top" Name="AddButton" Click="AddButton_Click" Background="#FF2442C9" RenderTransformOrigin="0.301,-0.389"/>
             <TextBlock HorizontalAlignment="Left" Margin="15,225,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
         </Grid>
+        <Image Margin="0,0,278,519" Grid.RowSpan="2" Source="/descarga (7).jpg" Stretch="Fill"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

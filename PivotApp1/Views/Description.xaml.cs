@@ -23,8 +23,6 @@ namespace PivotApp1.Contents
         public Description()
         {
             InitializeComponent();
-
-            InitializeImage();
         }
 
         public void LoadPiece()
@@ -36,16 +34,6 @@ namespace PivotApp1.Contents
             MemoryStream ms = new MemoryStream(Convert.FromBase64String(piecesList.current.Picture));
             BitmapImage image = new BitmapImage();
             image.SetSource(ms);
-            image.DecodePixelHeight = 10;
-            image.DecodePixelWidth = 10;
-            Image.Source = image;
-        }
-
-        public void InitializeImage()
-        {
-            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("descarga (4).jpg", UriKind.Relative));
-            BitmapImage image = new BitmapImage();
-            image.SetSource(imageResource.Stream);
             image.DecodePixelHeight = 10;
             image.DecodePixelWidth = 10;
             Image.Source = image;
@@ -94,7 +82,7 @@ namespace PivotApp1.Contents
             piecesList.current.Update();
         }
 
-        private void Clothes_Load(object sender, RoutedEventArgs e)
+        private void Clothes(object sender, RoutedEventArgs e)
         {
             LoadPiece();
         }

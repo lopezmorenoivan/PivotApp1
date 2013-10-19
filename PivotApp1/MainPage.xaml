@@ -31,13 +31,13 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
             <TextBox HorizontalAlignment="Left" Height="72" Margin="101,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="323" Name="Mail"/>
             <PasswordBox HorizontalAlignment="Left" Margin="102,106,0,0" VerticalAlignment="Top" Width="323" Name="Pass"/>
-            <Button Content="Sign In" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn" Click="SignIn_Click" Background="#FF2442C9">
+            <Button Content="Sign In" HorizontalAlignment="Left" Margin="174,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn" Click="SignIn_Click" Background="#FF2442C9">
                 <Button.Projection>
                     <PlaneProjection RotationX="-1" RotationY="1"/>
                 </Button.Projection>
             </Button>
-            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Name="SignUp" Click="SignUpButton_Click" Background="#FF2442C9" RenderTransformOrigin="1.565,-0.66"/>
-            <Button Content="Sign using Facebook" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click" Background="#FF2442C9"/>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="174,464,0,0" VerticalAlignment="Top" Name="SignUp" Click="SignUpButton_Click" Background="#FF2442C9" RenderTransformOrigin="1.565,-0.66"/>
+            <Button Content="Sign using Facebook" HorizontalAlignment="Left" Margin="102,314,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click" Background="#FF2442C9"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,127,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="35,54,0,0" Grid.Row="1" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" Height="37" Width="61"/>
