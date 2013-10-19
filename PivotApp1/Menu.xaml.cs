@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Resources;
 using PivotApp1.Misc;
 using FacebookUtils;
+using System.Collections.ObjectModel;
 
 namespace PivotApp1
 {
@@ -43,7 +44,6 @@ namespace PivotApp1
         {
             piecesList.all = await piecesTable.Where(Piece => Piece.User == user.Mail).
                 ToCollectionAsync();
-
             Clothes.ItemsSource = piecesList.all;
         }
 
@@ -153,11 +153,6 @@ namespace PivotApp1
             }
         }
 
-        private void Type_Selection(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            this.weather = Weather.SelectedIndex;
-        }
-
         private void WTW_Loaded(object sender, RoutedEventArgs e)
         {
             Load_Selector();
@@ -166,6 +161,11 @@ namespace PivotApp1
         private void RefreshB_Click(object sender, RoutedEventArgs e)
         {
             Load_Buyer();
+        }
+
+        private void Weather_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            this.weather = Weather.SelectedIndex;
         }
 
 

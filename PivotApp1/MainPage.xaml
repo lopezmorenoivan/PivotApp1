@@ -17,18 +17,23 @@
     <Grid x:Name="LayoutRoot" Background="#FF091A47">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="578*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="youRcloset" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}">
+            	<Run/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
             <TextBlock Text="Login" Margin="133,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF2442C9"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0" Grid.RowSpan="2">
             <TextBox HorizontalAlignment="Left" Height="72" Margin="101,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="323" Name="Mail"/>
             <PasswordBox HorizontalAlignment="Left" Margin="102,106,0,0" VerticalAlignment="Top" Width="323" Name="Pass"/>
             <Button Content="Sign In" HorizontalAlignment="Left" Margin="174,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn" Click="SignIn_Click" Background="#FF2442C9">
@@ -40,7 +45,7 @@
             <Button Content="Sign using Facebook" HorizontalAlignment="Left" Margin="102,314,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click" Background="#FF2442C9"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,127,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="35,54,0,0" Grid.Row="1" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" Height="37" Width="61"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,25,0,0" Grid.Row="2" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" Height="37" Width="61"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

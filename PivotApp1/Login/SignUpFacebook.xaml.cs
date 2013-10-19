@@ -45,8 +45,6 @@ namespace PivotApp1.Login
                 WebClient client = new WebClient();
                 client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(AccessTokenDownloadCompleted);
                 client.DownloadStringAsync(new Uri(FacebookClient.Instance.GetAccessTokenRequestUrl(code)));
-
-                this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
             }
         }
 

@@ -23,24 +23,24 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="What To wear ;)"/>
             <TextBlock Text="Description" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
             <Image HorizontalAlignment="Right" Height="185" Margin="0,10,138,0" VerticalAlignment="Top" Width="205" Name="Image" Tap="Image_Tap" />
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="98,200,0,0" TextWrapping="Wrap" Name="Name" Text="" VerticalAlignment="Top" Width="358" Loaded="Clothes"/>
-            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="15,280,316,0">
-                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers"  Tap="Kind_Tap" Background="#FF2442C9"/>
-                <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt"  Tap="Kind_Tap" Background="#FF2442C9"/>
-                <toolkit:ListPickerItem x:Name="Coat" Content="Coat" Tap="Kind_Tap" Background="#FF2442C9"/>
-                <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes"  Tap="Kind_Tap" Background="#FF2442C9"/>
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="98,200,0,0" TextWrapping="Wrap" Name="Name" Text="" VerticalAlignment="Top" Width="358" Loaded="Clothes_Load" TextChanged="NameUpdate"/>
+            <toolkit:ListPicker x:Name="Option1" Header="Kind" Margin="15,280,316,0" DoubleTap="Kind_Tap">
+                <toolkit:ListPickerItem x:Name="Trousers" Content="Trousers" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="TShirt" Content="T-Shirt"  Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Coat" Content="Coat" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Shoes" Content="Shoes" Background="#FF2442C9"/>
             </toolkit:ListPicker>
-            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="278,280,58,100">
-                <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Tap="Type_Tap" Background="#FF2442C9"/>
-                <toolkit:ListPickerItem x:Name="Warm" Content="Warm" Tap="Type_Tap" Background="#FF2442C9"/>
-                <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy" Tap="Type_Tap" Margin="-4,0,4,0" Background="#FF2442C9"/>
+            <toolkit:ListPicker x:Name="Option2" Header="Type" Margin="278,280,58,100" DoubleTap="Type_Tap">
+                <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Warm" Content="Warm" Background="#FF2442C9"/>
+                <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"  Margin="-4,0,4,0" Background="#FF2442C9"/>
             </toolkit:ListPicker>
             <Button Content="Remove" HorizontalAlignment="Left" Margin="140,435,0,0" VerticalAlignment="Top" Name="RemoveButton" Click="RemoveButton_Click" Background="#FF2442C9"/>
             <TextBlock HorizontalAlignment="Left" Margin="36,225,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>

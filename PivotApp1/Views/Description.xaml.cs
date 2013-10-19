@@ -42,7 +42,7 @@ namespace PivotApp1.Contents
         private void NameUpdate(object sender, TextChangedEventArgs e)
         {
             piecesList.current.Name = Name.Text;
-            piecesList.current.Update();
+            piecesList.Update();
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -67,24 +67,25 @@ namespace PivotApp1.Contents
                 string fileName = e.OriginalFileName;
                 WriteableBitmap selectedPhoto = PictureDecoder.DecodeJpeg(e.ChosenPhoto);
                 Image.Source = selectedPhoto;
+                piecesList.Update();
             }
-        }
-
-        private void Kind_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            piecesList.current.Option1 = Option1.SelectedIndex;
-            piecesList.current.Update();
         }
 
         private void Type_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             piecesList.current.Option2 = Option2.SelectedIndex;
-            piecesList.current.Update();
+            piecesList.Update();
         }
 
-        private void Clothes(object sender, RoutedEventArgs e)
+        private void Clothes_Load(object sender, RoutedEventArgs e)
         {
             LoadPiece();
+        }
+
+        private void Kind_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            piecesList.current.Option1 = Option1.SelectedIndex;
+            piecesList.Update();
         }
 
     }

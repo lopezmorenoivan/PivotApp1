@@ -10,7 +10,6 @@ namespace PivotApp1.Misc
     public sealed class Pieces
     {
         public MobileServiceCollection<Piece, Piece> all { get; set; }
-        public IMobileServiceTable<Piece> pieceTable = App.MobileService.GetTable<Piece>();
         public Piece current { get; set; }
         public User user = User.CreateObject();
 
@@ -44,6 +43,11 @@ namespace PivotApp1.Misc
         public bool Buyer (int option1)
         {
             return (all.Where(Piece => Piece.Option1 == option1 && Piece.User == user.Mail).Count() > 3);
+        }
+
+        public async void Update()
+        {
+            await App.MobileService.GetTable<Piece>().UpdateAsync(current);
         }
     }
 }

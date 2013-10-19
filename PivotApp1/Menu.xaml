@@ -104,8 +104,8 @@
             <!--Pivot item four-->
             <phone:PivotItem Header="Settings">
                 <StackPanel HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
-                    <toolkit:ListPicker x:Name="Weather" Header="Type">
-                        <toolkit:ListPickerItem x:Name="Cold" Content="Cold" Tap="Type_Selection"/>
+                    <toolkit:ListPicker x:Name="Weather" Header="Type" DoubleTap="Weather_Tap">
+                        <toolkit:ListPickerItem x:Name="Cold" Content="Cold"/>
                         <toolkit:ListPickerItem x:Name="Warm" Content="Warm"/>
                         <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"/>
                     </toolkit:ListPicker>

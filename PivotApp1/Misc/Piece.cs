@@ -10,6 +10,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
+using System.Windows.Media.Imaging;
 
 namespace PivotApp1
 {
@@ -35,11 +36,6 @@ namespace PivotApp1
         public async void Insert()
         {
             await App.MobileService.GetTable<Piece>().InsertAsync(this);
-        }
-
-        public async void Update()
-        {
-            await App.MobileService.GetTable<Piece>().UpdateAsync(this);
         }
 
         public async void Delete()
