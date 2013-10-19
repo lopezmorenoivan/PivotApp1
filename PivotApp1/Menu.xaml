@@ -39,12 +39,12 @@
          -->
 
         <!--Pivot Control-->
-        <phone:Pivot Title="What To Wear ;)" Margin="10,0,-10,0">
+        <phone:Pivot Title="What To Wear ;)" Margin="10,0,-10,0" Background="#FF091A47">
 
             <!--Pivot item one-->
-            <phone:PivotItem Header="Closet" Margin="0,10,10,168">
+            <phone:PivotItem Header="Closet" Margin="0,10,10,168" Background="#FF091A47">
                 <StackPanel Margin="0,0,0,-167">
-                    <ListBox x:Name="Clothes" Width="450" Height="448" Margin="10" Loaded="Cloathes_Loaded" Tap="Clothes_Selection" >
+                    <ListBox x:Name="Clothes" Width="450" Height="435" Margin="10" Loaded="Cloathes_Loaded" Tap="Clothes_Selection" Background="#FF091A47" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -54,7 +54,11 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Height="100" Margin="0,10,10,168">
-                        <Button Content="Add" Margin="150,0,158,0" RenderTransformOrigin="0.115,-1.039" Name="Add" Click="AddButton_Click_1"/>
+                        <Button Content="Add" Margin="149.996,0,158.004,0" RenderTransformOrigin="0.175,-0.46" Name="Add" Click="AddButton_Click_1" Background="#FF2442C9" Height="70.486" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                        	<Button.RenderTransform>
+                        		<CompositeTransform Rotation="0.281" SkewX="-0.097" TranslateX="0.055"/>
+                        	</Button.RenderTransform>
+                        </Button>
                     </StackPanel>
                     <StackPanel Height="100"/>
                 </StackPanel>
@@ -76,7 +80,7 @@
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="ShoesW"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Name="CoatW"/>
-                    <Button Content="Refresh" Name="Refresh" Margin="150,0,158,0" Click="Refresh_Click"/>
+                    <Button Content="Refresh" Name="Refresh" Margin="150,0,158,0" Click="Refresh_Click" Background="#FF2442C9"/>
                 </StackPanel>
             </phone:PivotItem>
 
@@ -93,7 +97,7 @@
                     <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="ShoesB"/>
                     <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Coat" VerticalAlignment="Top" Width="456"/>
                     <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="456" Name="CoatB"/>
-                    <Button Content="Refresh" Name="RefreshB" Margin="150,0,158,0" Click="RefreshB_Click"/>
+                    <Button Content="Refresh" Name="RefreshB" Margin="150,0,158,0" Click="RefreshB_Click" Background="#FF2442C9"/>
                 </StackPanel>
             </phone:PivotItem>
 

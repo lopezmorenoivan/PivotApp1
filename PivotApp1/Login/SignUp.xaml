@@ -23,16 +23,20 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Sign Up" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Sign Up" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF2442C9"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="10,10,-10,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="456" Name="Name"/>
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="10,212,-10,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="456" Name="Mail"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="10,312,-10,0" VerticalAlignment="Top" Width="456" Name="Password"/>
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="10,109,-10,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="456" Name="Surname"/>
-            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="168,525,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,14,0">
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="92,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" Name="Name"/>
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="92,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" Name="Mail"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="92,260,0,0" VerticalAlignment="Top" Width="340" Name="Password"/>
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="92,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" Name="Surname"/>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="171,404,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#FF2442C9"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,59,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,136,0,0" TextWrapping="Wrap" Text="Surname:" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,213,0,0" TextWrapping="Wrap" Text="Mail:" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5,284,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
 
         </Grid>
     </Grid>

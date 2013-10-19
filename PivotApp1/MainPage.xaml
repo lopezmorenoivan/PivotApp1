@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FF091A47">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -23,18 +23,24 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="youRcloset" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Login" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Login" Margin="133,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF2442C9"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox HorizontalAlignment="Left" Height="72" Margin="10,0,-10,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="456" Name="Mail"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="10,127,-10,0" VerticalAlignment="Top" Width="456" Name="Pass"/>
-            <Button Content="Sign In" HorizontalAlignment="Left" Margin="160,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn" Click="SignIn_Click"/>
-            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="160,343,0,0" VerticalAlignment="Top" Name="SignUp" Click="SignUpButton_Click"/>
-            <Button Content="Sign using Facebook" HorizontalAlignment="Left" Margin="103,444,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="101,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="323" Name="Mail"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="102,106,0,0" VerticalAlignment="Top" Width="323" Name="Pass"/>
+            <Button Content="Sign In" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.75,0.528" Name="SignIn" Click="SignIn_Click" Background="#FF2442C9">
+                <Button.Projection>
+                    <PlaneProjection RotationX="-1" RotationY="1"/>
+                </Button.Projection>
+            </Button>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top" Name="SignUp" Click="SignUpButton_Click" Background="#FF2442C9" RenderTransformOrigin="1.565,-0.66"/>
+            <Button Content="Sign using Facebook" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Name="SignUpFacebook" Click="SignUpFacebook_Click" Background="#FF2442C9"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,127,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
         </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="35,54,0,0" Grid.Row="1" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" Height="37" Width="61"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

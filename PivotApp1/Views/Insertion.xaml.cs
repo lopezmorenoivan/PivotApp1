@@ -51,7 +51,7 @@ namespace PivotApp1.Contents
 
         public void InitializeImage ()
         {
-            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("SplashScreenImage.jpg", UriKind.Relative));
+            StreamResourceInfo imageResource = Application.GetResourceStream(new Uri("descarga (4).jpg", UriKind.Relative));
             image.SetSource(imageResource.Stream);
             image.DecodePixelHeight = 10;
             image.DecodePixelWidth = 10;
