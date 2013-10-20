@@ -89,6 +89,8 @@ namespace PivotApp1
             user.Mail = "";
             user.Pass = "";
             user.Surname = "";
+
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
