@@ -110,8 +110,10 @@
                         <toolkit:ListPickerItem x:Name="Rainy" Content="Rainy"/>
                     </toolkit:ListPicker>
                     <Button Content="Disconnect" Name="Disconnect" Click="Disconnect_Click"/>
+                    <Button Content="Post on Facebook" Name="Post" Click="Post_Click"/>
                     <StackPanel HorizontalAlignment="Left" Name="About">
-                        <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Width="456"/>
+                        <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" FontSize="50" Width="456"/>
+                        <TextBlock HorizontalAlignment="Left" Height="60" TextWrapping="Wrap" Text="Daniel Gutierrez, Ivan López and Nil Bacardit :)" VerticalAlignment="Top" Width="456" Margin="15,50,15,0"/>
                     </StackPanel>
                 </StackPanel>
             </phone:PivotItem>

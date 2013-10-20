@@ -22,7 +22,6 @@ namespace PivotApp1.Contents
         //temp
         private BitmapImage image = new BitmapImage();
         private String fileName = "SplashScreenImage.jpg";
-        private String carga = "descarga (4).jpg";
 
         public Insertion()
         {
@@ -69,7 +68,7 @@ namespace PivotApp1.Contents
 
         private String imageTo64Base (Image image)
         {
-            Stream imageResource = Application.GetResourceStream(new Uri(carga, UriKind.Relative)).Stream;
+            Stream imageResource = Application.GetResourceStream(new Uri(fileName, UriKind.Relative)).Stream;
             MemoryStream memStream = new MemoryStream();
             imageResource.CopyTo(memStream);
             // Convert byte[] to Base64 String

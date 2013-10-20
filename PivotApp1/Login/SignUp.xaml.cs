@@ -26,9 +26,14 @@ namespace PivotApp1.Login
             user.Mail = Mail.Text;
             user.Pass = Password.Password;
 
-            user.Insert();
+            if (user.Name.Length > 0 && user.Surname.Length > 0 && user.Mail.Length > 0 && user.Pass.Length > 0)
+            {
+                user.Insert();
 
-            this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
+                this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
+            }
+            else
+                MessageBox.Show("Check your data");
         }
 
     }

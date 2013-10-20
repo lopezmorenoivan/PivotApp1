@@ -87,6 +87,5 @@ namespace PivotApp1.Contents
             piecesList.current.Option1 = Option1.SelectedIndex;
             piecesList.Update();
         }
-
     }
 }
