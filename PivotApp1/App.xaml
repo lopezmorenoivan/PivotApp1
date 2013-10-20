@@ -14,9 +14,10 @@
                 <nav:UriMapping Uri="/Insertion" MappedUri="/Views/Insertion.xaml"/>
                 <nav:UriMapping Uri="/Description" MappedUri="/Views/Description.xaml"/>
                 <nav:UriMapping Uri="/MainPage" MappedUri="/MainPage.xaml"/>
-                <nav:UriMapping Uri="/Login" MappedUri="Login/Login"/>
-                <nav:UriMapping Uri="/SignUp" MappedUri="Login/SignUp"/>
-                <nav:UriMapping Uri="/SignUpFacebook" MappedUri="Login/SignUpFacebook"/>
+                <nav:UriMapping Uri="/Login" MappedUri="Login/Login.xaml"/>
+                <nav:UriMapping Uri="/SignUp" MappedUri="Login/SignUp.xaml"/>
+                <nav:UriMapping Uri="/SignUpFacebook" MappedUri="Login/SignUpFacebook.xaml"/>
+                <nav:UriMapping Uri="/Menu" MappedUri="/Menu.xaml"/>
             </nav:UriMapper.UriMappings>
         </nav:UriMapper>
 

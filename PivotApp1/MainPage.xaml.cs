@@ -12,9 +12,15 @@ namespace PivotApp1
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private User user;
+
         public MainPage()
         {
             InitializeComponent();
+
+            user = User.CreateObject();
+
+            User.Load();
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -29,7 +35,6 @@ namespace PivotApp1
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            User user = User.CreateObject();
             user.Mail = Mail.Text;
             user.Pass = Pass.Password;
 

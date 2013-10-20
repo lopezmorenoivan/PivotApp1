@@ -10,12 +10,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
+
 namespace PivotApp1
 {
     
     public sealed class User
     {
         private bool validated = false;
+
+        private static MobileServiceCollection<User, User> users;
 
         public int Id { get; set; }
 
@@ -34,6 +37,11 @@ namespace PivotApp1
         private static User user;
         User() { }
 
+        public async static void Load ()
+        {
+            users = await App.MobileService.GetTable<User>().ToCollectionAsync();
+        }
+
         public static User CreateObject()
         {
             // If the object is null for first time instantiate it once.  
@@ -51,12 +59,9 @@ namespace PivotApp1
             await App.MobileService.GetTable<User>().InsertAsync(this);
         }
 
-        public async void Check()
+        public void Check()
         {
-            MobileServiceCollection<User, User> users = await App.MobileService.GetTable<User>().
-                Where(User => user.Mail.Equals(this.Mail) && user.Pass.Equals(this.Pass)).ToCollectionAsync();
-
-            validated = (users.Count > 0);
+            validated = (users.Where(User => this.Mail.Length > 0 && this.Pass.Length > 0 && User.Mail.Equals(this.Mail) && User.Pass.Equals(this.Pass)).Count() > 0);
         }
 
         public bool isValid()

@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FacebookUtils;
+using System.Threading;
 using Tools;
 
 namespace PivotApp1.Login
@@ -64,7 +65,7 @@ namespace PivotApp1.Login
             // Back to MainPage
             var rootFrame = Application.Current.RootVisual as PhoneApplicationFrame;
             if (rootFrame != null)
-                rootFrame.GoBack();
+                this.NavigationService.Navigate(new Uri("/Menu.xaml", UriKind.Relative));
         }
     }
 }
